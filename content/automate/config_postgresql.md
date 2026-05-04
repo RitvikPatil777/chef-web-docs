@@ -99,8 +99,8 @@ lag_health_threshold = 307200
 max_replay_lag_before_restart_s = 180
 max_wal_senders = 10
 max_replication_slots = 5
-wal_sender_timeout = 60
-wal_receiver_timeout = 60
+wal_sender_timeout = 60000
+wal_receiver_timeout = 60000
 wal_compression = "off"
 ```
 
@@ -112,9 +112,11 @@ This section configures replication settings:
 - `max_replay_lag_before_restart_s`: Custom setting; largest lag time in seconds since log was last replayed before replica is eligible for a restart.
 - `max_wal_senders`: Limits the number of standbys that can connect for replication (default: 10).
 - `max_replication_slots`: Sets the number of allowed replication slots (default: 5).
-- `wal_sender_timeout`: Primary waits 60 seconds for standby response before disconnecting.
-- `wal_receiver_timeout`: Standby waits 60 seconds for data from primary before timing out.
+- `wal_sender_timeout`: Sets how long, in milliseconds, the primary waits for a standby response before disconnecting. The default is `60000` (60 seconds).
+- `wal_receiver_timeout`: Sets how long, in milliseconds, the standby waits for data from the primary before timing out. The default is `60000` (60 seconds).
 - `wal_compression`: Controls compression of WAL data; "off" disables it, "on" enables it.
+
+**Note:** Setting `wal_sender_timeout` or `wal_receiver_timeout` below `5000` (5 seconds) will cause WAL streaming and `pg_basebackup` operations to fail under production load, causing replicas to continuously drop their connection and resync in a loop.
 
 ### Transport security settings
 
