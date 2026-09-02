@@ -22,10 +22,11 @@ The initial release is limited to backward compatibility for cookbook-consumptio
 
 The confirmed scope includes:
 
-- Backward compatibility for supported read-only `knife supermarket` commands.
+- Backward compatibility for unauthenticated, read-only `knife supermarket` commands, including `download`, `install`, `list`, `search`, and `show`.
 - Backward compatibility for Berkshelf cookbook consumption workflows.
 - Backward compatibility for Policyfile cookbook consumption workflows.
 - Compatibility only for cookbooks from the public Chef Supermarket.
+- Parallel support for public Chef Supermarket and Marketplace cookbook sources.
 
 ## Out-of-scope for initial release
 
@@ -51,7 +52,7 @@ Use the Marketplace compatibility reference for command and configuration detail
 
 Compatibility applies only to cookbooks from the public Chef Supermarket.
 Private Chef Supermarket content is not supported in this initial release.
-Only verified supported read-only `knife supermarket` commands are in scope.
+Unauthenticated, read-only `knife supermarket` commands are in scope.
 Write and administrative commands are outside the initial-release scope.
 
 ## Related information

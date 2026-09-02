@@ -12,64 +12,68 @@ draft = false
 This reference documents the initial-release backward compatibility scope for cookbook consumption.
 It applies only to cookbooks from the public Chef Supermarket.
 It does not apply to private Chef Supermarket content.
+Marketplace is available at `https://marketplace.chef.io`.
+You can continue to use `https://supermarket.chef.io` or configure Marketplace as your public cookbook source.
 
-## Verified baseline behavior in existing docs
+## `knife supermarket` compatibility
 
-The current `knife supermarket` documentation identifies these arguments as not requiring a user account: `download`, `search`, `install`, and `list`.
-The same documentation defines `-m`, `--supermarket-site` as the option for setting the Supermarket URL, with a default of `https://supermarket.chef.io`.
+Marketplace supports all unauthenticated, read-only `knife supermarket` commands.
+The command syntax is the same as it is for Chef Supermarket.
+No Marketplace credentials are required.
 
-## `knife supermarket` command comparison
+Configure Marketplace for all `knife supermarket` commands by adding the following setting to your `knife.rb` file:
 
-The following table covers each verified read-only command listed in existing docs as not requiring a user account.
+```ruby
+knife[:supermarket_site] = "https://marketplace.chef.io"
+```
 
-| Existing public Chef Supermarket command | Marketplace equivalent | Purpose | Notes or differences |
-|---|---|---|---|
-| `knife supermarket download COOKBOOK_NAME [COOKBOOK_VERSION] (options)` | [AUTHOR NOTE: Exact Marketplace command syntax requires engineering validation.] | Download a cookbook archive. | Existing docs verify `-m`, `--supermarket-site` and default `https://supermarket.chef.io`. Marketplace endpoint value and exact option placement are not yet confirmed in this repository. |
-| `knife supermarket install COOKBOOK_NAME [COOKBOOK_VERSION] (options)` | [AUTHOR NOTE: Exact Marketplace command syntax requires engineering validation.] | Install a cookbook from Supermarket into a local git workflow. | Existing docs verify `-m`, `--supermarket-site` and default `https://supermarket.chef.io`. Marketplace endpoint value and exact option placement are not yet confirmed in this repository. |
-| `knife supermarket list (options)` | [AUTHOR NOTE: Exact Marketplace command syntax requires engineering validation.] | List available cookbooks. | Existing docs verify `-m`, `--supermarket-site` and default `https://supermarket.chef.io`. Marketplace endpoint value and exact option placement are not yet confirmed in this repository. |
-| `knife supermarket search SEARCH_QUERY (options)` | [AUTHOR NOTE: Exact Marketplace command syntax requires engineering validation.] | Search available cookbooks. | Existing docs verify `-m`, `--supermarket-site` and default `https://supermarket.chef.io`. Marketplace endpoint value and exact option placement are not yet confirmed in this repository. |
+You can also use the `--supermarket-site https://marketplace.chef.io` option with an individual command.
 
-[AUTHOR NOTE: Validate whether any additional read-only `knife supermarket` commands are in initial-release scope. Existing docs also include `show`, but this repository does not confirm initial-release Marketplace support for it.]
+| Command | Marketplace example | Purpose |
+|---|---|---|
+| `knife supermarket download <cookbook-name>` | `knife supermarket download <cookbook-name> --supermarket-site https://marketplace.chef.io` | Download a cookbook archive. |
+| `knife supermarket install <cookbook-name>` | `knife supermarket install <cookbook-name> --supermarket-site https://marketplace.chef.io` | Install a cookbook into a local Git workflow. |
+| `knife supermarket list` | `knife supermarket list --supermarket-site https://marketplace.chef.io` | List available cookbooks. |
+| `knife supermarket search <search-query>` | `knife supermarket search <search-query> --supermarket-site https://marketplace.chef.io` | Search available cookbooks. |
+| `knife supermarket show <cookbook-name>` | `knife supermarket show <cookbook-name> --supermarket-site https://marketplace.chef.io` | Show cookbook details. |
+
+The examples use Marketplace for a single command.
+After you configure `knife[:supermarket_site]`, use the same commands without the `--supermarket-site` option.
 
 ## Berkshelf compatibility comparison
 
-Current Berkshelf documentation verifies the default source pattern:
+To use Marketplace with Berkshelf, replace the public Chef Supermarket source in your `Berksfile`:
 
 ```ruby
-source "https://supermarket.chef.io"
+source "https://marketplace.chef.io"
 metadata
 ```
 
-Current Berkshelf documentation also verifies support for custom source URLs by adding additional `source` entries.
+Use your existing Berkshelf commands, such as `berks install`.
+No Marketplace credentials are required.
 
-| Existing public Chef Supermarket behavior | Marketplace equivalent | Verified configuration change | Verified limitation |
+| Public cookbook source | Marketplace source | Configuration change | Limitation |
 |---|---|---|---|
-| Berkshelf resolves cookbooks from `source "https://supermarket.chef.io"`. | [AUTHOR NOTE: Marketplace Berkshelf source URL requires engineering validation.] | [AUTHOR NOTE: Confirm whether the only change is replacing the source URL with the Marketplace endpoint.] | Initial-release scope is limited to cookbooks from the public Chef Supermarket. Private Chef Supermarket content is out of scope. |
+| `source "https://supermarket.chef.io"` | `source "https://marketplace.chef.io"` | Replace the source URL. | Private Chef Supermarket content is out of scope. |
 
 ## Policyfile compatibility comparison
 
-Current Policyfile documentation verifies that `default_source :supermarket` pulls from the public Chef Supermarket by default.
-It also verifies a custom URL form:
+To use Marketplace with a Policyfile, configure Marketplace as the Supermarket source:
 
 ```ruby
-default_source :supermarket, "https://supermarket-name.example"
+default_source :supermarket, "https://marketplace.chef.io"
 ```
 
-| Existing public Chef Supermarket behavior | Marketplace equivalent | Verified configuration change | Verified limitation |
+Use your existing Policyfile commands after you change the source URL.
+No Marketplace credentials are required.
+
+| Public cookbook source | Marketplace source | Configuration change | Limitation |
 |---|---|---|---|
-| `default_source :supermarket` uses the public Chef Supermarket by default. | [AUTHOR NOTE: Marketplace Policyfile source endpoint and exact syntax require engineering validation.] | [AUTHOR NOTE: Confirm whether `default_source :supermarket, "<marketplace-endpoint>"` is the supported Marketplace pattern.] | Initial-release scope is limited to cookbooks from the public Chef Supermarket. Private Chef Supermarket content is out of scope. |
+| `default_source :supermarket` | `default_source :supermarket, "https://marketplace.chef.io"` | Add the Marketplace URL to `default_source`. | Private Chef Supermarket content is out of scope. |
 
 ## Initial-release limitations
 
 - Compatibility applies only to cookbooks from the public Chef Supermarket.
 - Private Chef Supermarket content is not supported.
-- Only verified supported read-only `knife supermarket` commands are supported.
+- Marketplace supports unauthenticated, read-only `knife supermarket` commands.
 - Write and administrative commands are outside the initial-release scope.
-
-## Author validation required
-
-- Confirm the exact Marketplace endpoint.
-- Confirm whether the URL scheme is required.
-- Confirm exact `knife supermarket` Marketplace syntax, including flag placement and required options.
-- Confirm whether `show` is supported in the initial release.
-- Confirm any Marketplace-specific authentication or configuration requirements for CLI, Berkshelf, and Policyfile.
