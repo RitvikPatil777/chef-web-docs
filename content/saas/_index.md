@@ -32,8 +32,3 @@ Maintain compliance and prevent security incidents across heterogeneous estates 
 Empowering IT resource managers through automation to improve efficiency while reducing risk across IT resources.
 
 To find out more about the configuration for Chef SaaS, refer to the [Get Started with Chef SaaS](/saas/get_started/) page.
-
-For Marketplace initial-release documentation, refer to:
-
-- [Marketplace initial release overview](/saas/marketplace_initial_release_overview/)
-- [Marketplace compatibility reference](/saas/marketplace_compatibility_reference/)

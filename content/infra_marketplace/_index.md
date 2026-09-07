@@ -1,20 +1,21 @@
 +++
-title = "Marketplace initial release overview"
+title = "Infra Marketplace overview"
 draft = false
+
 [menu]
-  [menu.cloud]
-    title = "Marketplace overview"
-    identifier = "chef_cloud/saas/Marketplace initial release overview"
-    parent = "chef_cloud/saas"
-    weight = 30
+  [menu.infra_marketplace]
+    title = "Overview"
+    identifier = "infra_marketplace/overview"
+    parent = "infra_marketplace"
+    weight = 10
 +++
 
-Marketplace is a content destination planned as part of the broader Infra 360 ecosystem.
-This page describes only the confirmed initial-release scope.
+Infra Marketplace provides backward-compatible public cookbook consumption for Chef Supermarket workflows.
+This page describes the confirmed initial-release scope.
 
 ## Intended audience
 
-This page is for DevOps engineers and platform teams that currently consume cookbooks from the public Chef Supermarket and need to understand initial Marketplace compatibility.
+This page is for DevOps engineers and platform teams that currently consume cookbooks from the public Chef Supermarket.
 
 ## Initial-release scope
 
@@ -26,7 +27,7 @@ The confirmed scope includes:
 - Backward compatibility for Berkshelf cookbook consumption workflows.
 - Backward compatibility for Policyfile cookbook consumption workflows.
 - Compatibility only for cookbooks from the public Chef Supermarket.
-- Parallel support for public Chef Supermarket and Marketplace cookbook sources.
+- Parallel support for public Chef Supermarket and Infra Marketplace cookbook sources.
 
 ## Out-of-scope for initial release
 
@@ -38,16 +39,6 @@ The following items are outside the initial-release scope:
 - Migration workflows for private Chef Supermarket.
 - New content types beyond cookbooks from the public Chef Supermarket.
 
-## Supported compatibility scenarios
-
-Marketplace initial-release documentation currently covers:
-
-- Supported read-only `knife supermarket` backward compatibility.
-- Berkshelf backward compatibility.
-- Policyfile backward compatibility.
-
-Use the Marketplace compatibility reference for command and configuration details.
-
 ## Limitations
 
 Compatibility applies only to cookbooks from the public Chef Supermarket.
@@ -57,7 +48,7 @@ Write and administrative commands are outside the initial-release scope.
 
 ## Related information
 
-- [Marketplace compatibility reference](/saas/marketplace_compatibility_reference/)
+- [Infra Marketplace compatibility reference](/infra_marketplace/compatibility_reference/)
 - [knife supermarket](/workstation/latest/tools/knife/knife_supermarket/)
 - [Berkshelf](/workstation/latest/tools/berkshelf/)
 - [About Policyfiles](/client/latest/policy/policyfile/)

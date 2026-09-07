@@ -1,27 +1,28 @@
 +++
-title = "Marketplace compatibility reference"
+title = "Infra Marketplace compatibility reference"
 draft = false
+
 [menu]
-  [menu.cloud]
-    title = "Marketplace compatibility"
-    identifier = "chef_cloud/saas/Marketplace compatibility reference"
-    parent = "chef_cloud/saas"
-    weight = 40
+  [menu.infra_marketplace]
+    title = "Compatibility reference"
+    identifier = "infra_marketplace/compatibility_reference"
+    parent = "infra_marketplace"
+    weight = 20
 +++
 
 This reference documents the initial-release backward compatibility scope for cookbook consumption.
 It applies only to cookbooks from the public Chef Supermarket.
 It does not apply to private Chef Supermarket content.
-Marketplace is available at `https://marketplace.chef.io`.
-You can continue to use `https://supermarket.chef.io` or configure Marketplace as your public cookbook source.
+Infra Marketplace is available at `https://marketplace.chef.io`.
+You can continue to use `https://supermarket.chef.io` or configure Infra Marketplace as your public cookbook source.
 
 ## `knife supermarket` compatibility
 
-Marketplace supports all unauthenticated, read-only `knife supermarket` commands.
+Infra Marketplace supports all unauthenticated, read-only `knife supermarket` commands.
 The command syntax is the same as it is for Chef Supermarket.
-No Marketplace credentials are required.
+No Infra Marketplace credentials are required.
 
-Configure Marketplace for all `knife supermarket` commands by adding the following setting to your `knife.rb` file:
+Configure Infra Marketplace for all `knife supermarket` commands by adding the following setting to your `knife.rb` file:
 
 ```ruby
 knife[:supermarket_site] = "https://marketplace.chef.io"
@@ -29,7 +30,7 @@ knife[:supermarket_site] = "https://marketplace.chef.io"
 
 You can also use the `--supermarket-site https://marketplace.chef.io` option with an individual command.
 
-| Command | Marketplace example | Purpose |
+| Command | Infra Marketplace example | Purpose |
 |---|---|---|
 | `knife supermarket download <cookbook-name>` | `knife supermarket download <cookbook-name> --supermarket-site https://marketplace.chef.io` | Download a cookbook archive. |
 | `knife supermarket install <cookbook-name>` | `knife supermarket install <cookbook-name> --supermarket-site https://marketplace.chef.io` | Install a cookbook into a local Git workflow. |
@@ -37,12 +38,12 @@ You can also use the `--supermarket-site https://marketplace.chef.io` option wit
 | `knife supermarket search <search-query>` | `knife supermarket search <search-query> --supermarket-site https://marketplace.chef.io` | Search available cookbooks. |
 | `knife supermarket show <cookbook-name>` | `knife supermarket show <cookbook-name> --supermarket-site https://marketplace.chef.io` | Show cookbook details. |
 
-The examples use Marketplace for a single command.
+The examples use Infra Marketplace for a single command.
 After you configure `knife[:supermarket_site]`, use the same commands without the `--supermarket-site` option.
 
-## Berkshelf compatibility comparison
+## Berkshelf compatibility
 
-To use Marketplace with Berkshelf, replace the public Chef Supermarket source in your `Berksfile`:
+To use Infra Marketplace with Berkshelf, replace the public Chef Supermarket source in your `Berksfile`:
 
 ```ruby
 source "https://marketplace.chef.io"
@@ -50,24 +51,24 @@ metadata
 ```
 
 Use your existing Berkshelf commands, such as `berks install`.
-No Marketplace credentials are required.
+No Infra Marketplace credentials are required.
 
-| Public cookbook source | Marketplace source | Configuration change | Limitation |
+| Public cookbook source | Infra Marketplace source | Configuration change | Limitation |
 |---|---|---|---|
 | `source "https://supermarket.chef.io"` | `source "https://marketplace.chef.io"` | Replace the source URL. | Private Chef Supermarket content is out of scope. |
 
-## Policyfile compatibility comparison
+## Policyfile compatibility
 
-To use Marketplace with a Policyfile, configure Marketplace as the Supermarket source:
+To use Infra Marketplace with a Policyfile, configure Infra Marketplace as the Supermarket source:
 
 ```ruby
 default_source :supermarket, "https://marketplace.chef.io"
 ```
 
 Use your existing Policyfile commands after you change the source URL.
-No Marketplace credentials are required.
+No Infra Marketplace credentials are required.
 
-| Public cookbook source | Marketplace source | Configuration change | Limitation |
+| Public cookbook source | Infra Marketplace source | Configuration change | Limitation |
 |---|---|---|---|
 | `default_source :supermarket` | `default_source :supermarket, "https://marketplace.chef.io"` | Add the Marketplace URL to `default_source`. | Private Chef Supermarket content is out of scope. |
 
@@ -75,5 +76,5 @@ No Marketplace credentials are required.
 
 - Compatibility applies only to cookbooks from the public Chef Supermarket.
 - Private Chef Supermarket content is not supported.
-- Marketplace supports unauthenticated, read-only `knife supermarket` commands.
+- Infra Marketplace supports unauthenticated, read-only `knife supermarket` commands.
 - Write and administrative commands are outside the initial-release scope.

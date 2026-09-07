@@ -1179,6 +1179,33 @@ identifier = "chef_cloud"
 ####
 
 ####
+# Infra Marketplace Menu
+####
+
+[[infra_marketplace]]
+title = "Infra Marketplace"
+identifier = "infra_marketplace"
+url = "/infra_marketplace/"
+
+  [[infra_marketplace]]
+  title = "Overview"
+  identifier = "infra_marketplace/overview"
+  parent = "infra_marketplace"
+  url = "/infra_marketplace/"
+  weight = 10
+
+  [[infra_marketplace]]
+  title = "Compatibility reference"
+  identifier = "infra_marketplace/compatibility_reference"
+  parent = "infra_marketplace"
+  url = "/infra_marketplace/compatibility_reference/"
+  weight = 20
+
+####
+# End Infra Marketplace Menu
+####
+
+####
 # Chef Workstation Menu
 ####
 
