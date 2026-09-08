@@ -1,0 +1,16 @@
+{{- /* Load the theme stylesheet and local documentation refresh styles. */ -}}
+{{ $silenceSassDeprecations := slice "color-functions" "global-builtin" "import" "if-function" }}
+{{ $options := dict
+  "transpiler" "dartsass"
+  "vars" site.Params.styles
+  "enableSourceMap" (not hugo.IsProduction)
+  "includePaths" (slice "node_modules")
+  "silenceDeprecations" (cond hugo.IsDevelopment $silenceSassDeprecations "")
+  "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+}}
+<link rel="shortcut icon" type="image/png" href="{{ "images/progress-emoticon.ico" | relURL }}" />
+{{ $themeStyle := resources.Get "sass/main.scss" | toCSS $options | minify }}
+{{ $revampStyle := resources.Get "sass/docs-revamp.scss" | toCSS $options | minify }}
+<link rel="stylesheet" href="{{ $themeStyle.RelPermalink }}" />
+<link rel="stylesheet" href="{{ $revampStyle.RelPermalink }}" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1" rel="stylesheet" />
