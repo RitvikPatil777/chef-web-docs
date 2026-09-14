@@ -491,46 +491,53 @@ title = "Chef InSpec"
 identifier = "inspec"
 
   [[inspec]]
+  title = "version 7.2"
+  identifier = "inspec/7.2/"
+  parent = "inspec"
+  url = "/inspec/7.2/"
+  weight = 10
+
+  [[inspec]]
   title = "version 7.1"
   identifier = "inspec/7.1/"
   parent = "inspec"
   url = "/inspec/7.1/"
-  weight = 10
+  weight = 20
 
   [[inspec]]
   title = "version 7.0"
   identifier = "inspec/7.0/"
   parent = "inspec"
   url = "/inspec/7.0/"
-  weight = 20
+  weight = 30
 
   [[inspec]]
   title = "version 6.8"
   identifier = "inspec/6.8/"
   parent = "inspec"
   url = "/inspec/6.8/"
-  weight = 30
+  weight = 40
 
   [[inspec]]
   title = "version 5.24"
   identifier = "inspec/5.24/"
   parent = "inspec"
   url = "/inspec/5.24/"
-  weight = 40
+  weight = 50
 
   [[inspec]]
   title = "version 5.23"
   identifier = "inspec/5.23/"
   parent = "inspec"
   url = "/inspec/5.23/"
-  weight = 50
+  weight = 60
 
   [[inspec]]
   title = "Resource packs"
   identifier = "inspec/resource_packs"
   parent = "inspec"
   url = "/inspec/resource_packs/"
-  weight = 60
+  weight = 70
 
 ####
 # End Chef InSpec Menu
@@ -1169,6 +1176,54 @@ identifier = "chef_cloud"
 
 ####
 # End Chef Cloud Menu
+####
+
+####
+# Marketplace Menu
+####
+
+[[marketplace]]
+title = "Marketplace"
+identifier = "marketplace"
+url = "/marketplace/"
+
+  [[marketplace]]
+  title = "Overview"
+  identifier = "marketplace/overview"
+  parent = "marketplace"
+  url = "/marketplace/"
+  weight = 10
+
+  [[marketplace]]
+  title = "Backward compatibility"
+  identifier = "marketplace/backward_compatibility"
+  parent = "marketplace"
+  url = "/marketplace/backward_compatibility/"
+  weight = 20
+
+    [[marketplace]]
+    title = "Knife supermarket"
+    identifier = "marketplace/backward_compatibility/knife_supermarket"
+    parent = "marketplace/backward_compatibility"
+    url = "/marketplace/backward_compatibility/knife_supermarket/"
+    weight = 10
+
+    [[marketplace]]
+    title = "Berkshelf"
+    identifier = "marketplace/backward_compatibility/berkshelf"
+    parent = "marketplace/backward_compatibility"
+    url = "/marketplace/backward_compatibility/berkshelf/"
+    weight = 20
+
+    [[marketplace]]
+    title = "Policyfile"
+    identifier = "marketplace/backward_compatibility/policyfile"
+    parent = "marketplace/backward_compatibility"
+    url = "/marketplace/backward_compatibility/policyfile/"
+    weight = 30
+
+####
+# End Marketplace Menu
 ####
 
 ####
