@@ -1,9 +1,9 @@
-github.com/chef/automate-private/components/docs-chef-io v0.0.0-20260708133628-d7631f7b3bbc h1:RiBJ3TQHCYApewqQlvm1Q3FVUCVzMEL6sIQ4jscRhmQ=
-github.com/chef/automate-private/components/docs-chef-io v0.0.0-20260708133628-d7631f7b3bbc/go.mod h1:Sd4ML6utYSfjuLU4VkHWaX4PFX24JSbm08rrvqOGpe8=
 github.com/chef/chef-docs-theme v0.0.0-20260618125028-0f405d6b95d1 h1:y/rZKqxmyC13bIZeptNYngxnXW4S1OW6syIzdi0/Ejc=
 github.com/chef/chef-docs-theme v0.0.0-20260618125028-0f405d6b95d1/go.mod h1:+Jpnv+LXE6dXu2xDcMzMc0RxRGuCPAoFxq5tJ/X6QpQ=
 github.com/chef/chef-server/docs-chef-io v0.0.0-20260902055333-6a599ba7875b h1:+kAJ0sbriXFamJ+8e/UeBWyU52DG5gnIc6j8Jpgp8HM=
 github.com/chef/chef-server/docs-chef-io v0.0.0-20260902055333-6a599ba7875b/go.mod h1:gMSa25GUHmLimA0gjvRd3hs1buOBqkKPrdHzHvaJauY=
+github.com/chef/cms-atlas/docs-chef-io v0.0.0-20261106135042-68975744cf8b h1:Q3DDlkczp8FVgU1ABJr3MQMG1K1xE2D8bRzYLatbLB8=
+github.com/chef/cms-atlas/docs-chef-io v0.0.0-20261106135042-68975744cf8b/go.mod h1:SCWop4gqXgEpK09nOddegU8V6QeUa9K7yCcSVs6rdvs=
 github.com/chef/compliance-profiles/docs-chef-io v0.0.0-20260824060042-97a0c5b7ceb5 h1:0VmctFM1HdD5qziKs2BloPb3afW9BFg9ZGMQwU11Q8E=
 github.com/chef/compliance-profiles/docs-chef-io v0.0.0-20260824060042-97a0c5b7ceb5/go.mod h1:fsG7S6r66ZW6Af/sqq+OL3WNP+BoO4V1/Evwu98Noig=
 github.com/chef/compliance-remediation-2022/docs-chef-io v0.0.0-20260715070108-00acb7d0c314 h1:LPBZSaWy08jnUM086FNxHeVqJTjF11AKaw1DuBOlr+E=

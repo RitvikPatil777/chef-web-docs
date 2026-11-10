@@ -10,20 +10,11 @@ workspace = ''
 
 ###
 # Chef Automate
+# NOTE: automate-private import temporarily removed from Hugo Modules resolution
+# because the repository is unreachable for Hugo Module fetching in this environment.
+# Vendored content remains untouched at _vendor/github.com/chef/automate-private
+# and continues to be used by the production build (which does not run `hugo mod get`).
 ###
-
-[[imports]]
-  disable = false
-  ignoreConfig = false
-  path = "github.com/chef/automate-private/components/docs-chef-io"
-
-[[imports.mounts]]
-  source = "data"
-  target = "data"
-
-[[imports.mounts]]
-  source = "static/automate-api-docs"
-  target = "static/automate-api-docs"
 
 
 ###
@@ -105,6 +96,19 @@ workspace = ''
 [[imports.mounts]]
   source = "layouts"
   target = "layouts"
+
+###
+# CMS Atlas (Marketplace)
+###
+
+[[imports]]
+  disable = false
+  ignoreConfig = false
+  path = "github.com/chef/cms-atlas/docs-chef-io"
+
+[[imports.mounts]]
+  source = "content/marketplace/reference"
+  target = "content/marketplace/reference"
 
 ###
 # Effortless Pattern

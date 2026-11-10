@@ -1229,6 +1229,63 @@ url = "/marketplace/"
     url = "/marketplace/backward_compatibility/"
     weight = 10
 
+  [[marketplace]]
+  title = "Reference"
+  identifier = "marketplace/reference"
+  parent = "marketplace"
+  url = "/marketplace/reference/"
+  weight = 30
+
+    [[marketplace]]
+    title = "CLI reference"
+    identifier = "marketplace/reference/cli"
+    parent = "marketplace/reference"
+    url = "/marketplace/reference/cli/"
+    weight = 10
+
+      [[marketplace]]
+      title = "Admin"
+      identifier = "marketplace/reference/cli/admin"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/admin/"
+      weight = 10
+
+      [[marketplace]]
+      title = "Berks"
+      identifier = "marketplace/reference/cli/berks"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/berks/"
+      weight = 20
+
+      [[marketplace]]
+      title = "Completion"
+      identifier = "marketplace/reference/cli/completion"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/completion/"
+      weight = 30
+
+      [[marketplace]]
+      title = "Core"
+      identifier = "marketplace/reference/cli/core"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/core/"
+      weight = 40
+
+      [[marketplace]]
+      title = "Inspec"
+      identifier = "marketplace/reference/cli/inspec"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/inspec/"
+      weight = 50
+
+      [[marketplace]]
+      title = "Knife"
+      identifier = "marketplace/reference/cli/knife"
+      parent = "marketplace/reference/cli"
+      url = "/marketplace/reference/cli/knife/"
+      weight = 60
+
+
 ####
 # End Marketplace Menu
 ####
