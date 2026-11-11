@@ -107,6 +107,19 @@ workspace = ''
   target = "layouts"
 
 ###
+# CMS Atlas (Marketplace)
+###
+
+[[imports]]
+  disable = false
+  ignoreConfig = false
+  path = "github.com/chef/cms-atlas/docs-chef-io"
+
+[[imports.mounts]]
+  source = "content/marketplace/reference"
+  target = "content/marketplace/reference"
+
+###
 # Effortless Pattern
 ###
 
